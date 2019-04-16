@@ -36,7 +36,7 @@ class ViewController: UIViewController, ViewLogic {
     
     @IBAction func pressedFetchButton() {
         if let qiitaList = presenter?.qiitaList, let qiita = qiitaList.randomElement() {
-            displayQiita(qiita: qiitaList)
+            displayQiita(qiita: qiita)
         } else {
             presenter?.startLoadingQiita()
         }
