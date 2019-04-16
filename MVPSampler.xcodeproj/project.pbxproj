@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D3D49D9A2265EA82004029CE /* QiitaAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D49D992265EA82004029CE /* QiitaAPI.swift */; };
 		D3D7C469226440E0009505C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D7C468226440E0009505C7 /* AppDelegate.swift */; };
 		D3D7C46B226440E0009505C7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D7C46A226440E0009505C7 /* ViewController.swift */; };
 		D3D7C46E226440E0009505C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3D7C46C226440E0009505C7 /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D3D49D992265EA82004029CE /* QiitaAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaAPI.swift; sourceTree = "<group>"; };
 		D3D7C465226440E0009505C7 /* MVPSampler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVPSampler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3D7C468226440E0009505C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3D7C46A226440E0009505C7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -101,12 +103,12 @@
 		D3D7C467226440E0009505C7 /* MVPSampler */ = {
 			isa = PBXGroup;
 			children = (
-				D3D7C49622644126009505C7 /* MVP */,
+				D3D7C474226440E1009505C7 /* Info.plist */,
 				D3D7C468226440E0009505C7 /* AppDelegate.swift */,
-				D3D7C46C226440E0009505C7 /* Main.storyboard */,
 				D3D7C46F226440E1009505C7 /* Assets.xcassets */,
 				D3D7C471226440E1009505C7 /* LaunchScreen.storyboard */,
-				D3D7C474226440E1009505C7 /* Info.plist */,
+				D3D7C46C226440E0009505C7 /* Main.storyboard */,
+				D3D7C49622644126009505C7 /* MVP */,
 			);
 			path = MVPSampler;
 			sourceTree = "<group>";
@@ -132,9 +134,10 @@
 		D3D7C49622644126009505C7 /* MVP */ = {
 			isa = PBXGroup;
 			children = (
-				D3D7C46A226440E0009505C7 /* ViewController.swift */,
-				D3D7C49722644136009505C7 /* Presenter.swift */,
 				D3D7C4992264413D009505C7 /* Model.swift */,
+				D3D7C49722644136009505C7 /* Presenter.swift */,
+				D3D49D992265EA82004029CE /* QiitaAPI.swift */,
+				D3D7C46A226440E0009505C7 /* ViewController.swift */,
 			);
 			path = MVP;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3D49D9A2265EA82004029CE /* QiitaAPI.swift in Sources */,
 				D3D7C49822644136009505C7 /* Presenter.swift in Sources */,
 				D3D7C46B226440E0009505C7 /* ViewController.swift in Sources */,
 				D3D7C469226440E0009505C7 /* AppDelegate.swift in Sources */,

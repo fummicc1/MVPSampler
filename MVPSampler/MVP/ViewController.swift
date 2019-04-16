@@ -1,7 +1,14 @@
 import UIKit
 
-class ViewController: UIViewController {
+protocol ViewLogic: class {
+    func displayQiita(qiita: Qiita)
+    func showError()
+}
 
+class ViewController: UIViewController, ViewLogic {
+
+    @IBOutlet private weak var qiitaLabel: UILabel!
+    
     var presenter: PresentationLogic?
     
     override func viewDidLoad() {
@@ -13,8 +20,20 @@ class ViewController: UIViewController {
         presenter = Presenter(viewController: self)
     }
     
-    @IBAction func pressedFetchButton() {
+    func displayQiita(qiita: Qiita) {
+        qiitaLabel.text = qiita.title
     }
     
+    func showError() {
+        let alert = UIAlertController(title: "エラー", message: "Qiita記事を取得できませんでした。", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true) { [weak self] in
+            self?.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    @IBAction func pressedFetchButton() {
+        presenter?.startLoadingQiita()
+    }
 }
 
