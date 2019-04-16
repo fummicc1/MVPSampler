@@ -9,7 +9,7 @@ class ViewController: UIViewController, ViewLogic {
 
     @IBOutlet private weak var qiitaLabel: UILabel!
     
-    var presenter: PresentationLogic?
+    var presenter: (PresentationLogic & Output)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +21,9 @@ class ViewController: UIViewController, ViewLogic {
     }
     
     func displayQiita(qiita: Qiita) {
-        qiitaLabel.text = qiita.title
+        DispatchQueue.main.async { [weak self] in
+            self?.qiitaLabel.text = qiita.title
+        }
     }
     
     func showError() {
@@ -33,7 +35,11 @@ class ViewController: UIViewController, ViewLogic {
     }
     
     @IBAction func pressedFetchButton() {
-        presenter?.startLoadingQiita()
+        if let qiitaList = presenter?.qiitaList, let qiita = qiitaList.randomElement() {
+            displayQiita(qiita: qiitaList)
+        } else {
+            presenter?.startLoadingQiita()
+        }
     }
 }
 
